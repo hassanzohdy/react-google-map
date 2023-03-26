@@ -1,6 +1,6 @@
 {
     "name": "@mongez/react-google-map",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Easy Google Map For React.",
     "main": "src/index.ts",
     "author": "hassanzohdy",
@@ -11,6 +11,9 @@
     "license": "MIT",
     "dependencies": {
         "@react-google-maps/api": "^2.18.1"
+    },
+    "peerDependencies": {
+        "react": ">=18"
     },
     "keywords": [
         "react",

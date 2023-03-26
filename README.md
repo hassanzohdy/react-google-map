@@ -8,6 +8,8 @@ A simple wrapper for Google maps in React.
 yarn add @mongez/react-google-map
 ```
 
+> Package requires react 18 or higher
+
 ## Usage
 
 First off, let's set the base configuration for the map. You can do this in your entry file, or in any other place that is executed before the map is used.

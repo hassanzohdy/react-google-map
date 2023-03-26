@@ -1,10 +1,8 @@
 import React from "react";
 
 export type Location = {
-  location: {
-    lat: number;
-    lng: number;
-  };
+  lat: number;
+  lng: number;
   [key: string]: any;
 };
 

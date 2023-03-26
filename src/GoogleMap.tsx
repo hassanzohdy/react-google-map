@@ -2,16 +2,13 @@ import {
   GoogleMap as BaseGoogleMap,
   useLoadScript,
 } from "@react-google-maps/api";
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 import { getGoogleMapConfig } from "./config";
 import { getGoogleMapApiKey } from "./google-map-services";
 import { GoogleMapLocation } from "./GoogleMapLocation";
-import type { GoogleMapProps } from "./types";
+import type { GoogleMapProps, Location } from "./types";
 
-const DefaultComponent = ({ location }: { location: Location }) => null;
-
-const LocationComponent =
-  getGoogleMapConfig("locationComponent") || DefaultComponent;
+const LocationComponent = getGoogleMapConfig("locationComponent") || undefined;
 
 export function GoogleMap({
   apiKey = getGoogleMapApiKey(),
@@ -29,13 +26,13 @@ export function GoogleMap({
   // initializing google map
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: String(apiKey),
-    libraries: getGoogleMapConfig("libraries"),
+    libraries: getGoogleMapConfig("libraries") || [],
   });
 
   const markers = useMemo(() => {
     if (locations?.length > 0) return locations;
 
-    return [center];
+    return [center] as Location[];
   }, [locations, center]);
 
   if (!isLoaded) {

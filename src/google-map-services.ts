@@ -1,6 +1,6 @@
 import { getGoogleMapConfig } from "./config";
 
-export const getGoogleMapApiKey = () => getGoogleMapConfig("apiKey");
+export const getGoogleMapApiKey = () => getGoogleMapConfig("apiKey") as string;
 
 export const currentLocaleCode = () =>
   getGoogleMapConfig("currentLocaleCode")?.();
@@ -14,7 +14,7 @@ export function getAddressByLatLng(lat: number, lng: number) {
     };
     const url = `https://maps.googleapis.com/maps/api/geocode/json`;
 
-    fetch(getUrl(url, params)).then((response) => {
+    fetch(getUrl(url, params)).then(response => {
       response.json().then(resolve).catch(reject);
     });
   });
@@ -34,7 +34,7 @@ export function getAddressByPlaceId(placeId: string) {
 
     const url = `https://maps.googleapis.com/maps/api/geocode/json`;
 
-    fetch(getUrl(url, params)).then((response) => {
+    fetch(getUrl(url, params)).then(response => {
       response.json().then(resolve).catch(reject);
     });
   });
