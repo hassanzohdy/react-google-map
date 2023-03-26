@@ -1,0 +1,20 @@
+{
+    "name": "@mongez/react-google-map",
+    "version": "1.0.0",
+    "description": "Easy Google Map For React.",
+    "main": "src/index.ts",
+    "author": "hassanzohdy",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/hassanzohdy/react-google-map"
+    },
+    "license": "MIT",
+    "dependencies": {
+        "@react-google-maps/api": "^2.18.1"
+    },
+    "keywords": [
+        "react",
+        "google-map",
+        "googlemap"
+    ]
+}
